@@ -29,6 +29,7 @@ async fn main() -> std::io::Result<()> {
         // CORS configuration to allow requests only from http://localhost:5173
         let cors = Cors::default()
             .allowed_origin("http://localhost:5173") // Explicitly allow localhost:5173
+            .allowed_origin("https://app1.bartechlabs.com")
             .allow_any_method()
             .allow_any_header()
             .max_age(3600);
