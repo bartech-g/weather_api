@@ -4,7 +4,7 @@ use reqwest::Client;
 use serde_json::{json, Value};  // Add `json` macro import
 use std::env;
 
-#[get("/weather/{city}")]
+#[get("/api/weather/{city}")]
 async fn get_weather(city: web::Path<String>) -> impl Responder {
     let client = Client::new();
     let api_key = env::var("API_KEY").unwrap_or_else(|_| "YOUR_API_KEY".to_string()); // Load from env variable
